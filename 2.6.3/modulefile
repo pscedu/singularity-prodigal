@@ -1,0 +1,25 @@
+#%Module1.0
+#INSTALLATION instructions can be found here https://gitlab.psc.edu/icaoberg/singularity-prodigal
+
+## "URL: https://www.psc.edu/resources/software"
+## "Category: Bioinformatics"
+
+ proc ModulesHelp { } {
+ global dotversion
+ puts stderr "prodigal 2.6.3 (prodigal)"
+ puts stderr "-------------------------"
+ puts stderr "\nTo enable, first load the following required modules (via module load command): "
+ puts stderr "\n\tmodule load prodigal/2.6.3"
+ puts stderr "\nFor a full list of binaries included in this module, type"
+ puts stderr "\n\tmodule what-is prodigal/2.6.3"
+ }
+
+module-whatis "prodigal 2.6.3 (prodigal)
+
+  Tools included in this module are
+
+  * prodigal"
+
+set PRODIGAL_HOME /opt/packages/prodigal/2.6.3
+setenv PRODIGAL_HOME ${PRODIGAL_HOME}
+prepend-path PATH ${PRODIGAL_HOME}
