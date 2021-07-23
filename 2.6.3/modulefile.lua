@@ -13,11 +13,6 @@ whatis("URL: https://www.psc.edu/resources/software")
 whatis("Description: Fast, reliable protein-coding gene prediction for prokaryotic genomes.")
 
 help([[
-prodigal 2.6.3
---------------
-
-Description
------------
 Fast, reliable protein-coding gene prediction for prokaryotic genomes.
 
 To load the module, type
