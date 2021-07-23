@@ -8,8 +8,3 @@ From: quay.io/biocontainers/prodigal:2.6.3--h516909a_2
     REPOSITORY https://github.com/pscedu/singularity-prodigal
     COPYRIGHT Copyright © 2021 Pittsburgh Supercomputing Center. All Rights Reserved.
     VERSION 2.6.3
-
-%post
-   rm /etc/resolv.conf
-
-####################################################################################
