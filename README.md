@@ -5,7 +5,7 @@
 ![License](https://img.shields.io/github/license/pscedu/singularity-prodigal)
 
 # singularity-prodigal
-Singularity recipe for [prodigal](https://github.com/sandialabs/prodigal).
+Singularity recipe for [prodigal](https://github.com/hyattpd/Prodigal).
 
 ## Installing the container on Bridges 2
 Copy the
