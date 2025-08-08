@@ -1,21 +1,25 @@
 #!/bin/bash
 
-if [ ! $(command -v singularity) ]; then
-	module load singularity
-fi
-
 VERSION=2.6.3
 PACKAGE=prodigal
 TOOL=$PACKAGE
-DIRECTORY=/opt/packages/$PACKAGE/$VERSION
+DIRECTORY=$(dirname "$0")
 
-PERSISTENT_FILE_STORAGE=/ocean
-if [ -d $PERSISTENT_FILE_STORAGE ]; then
-	OPTIONS="-B $PERSISTENT_FILE_STORAGE"
+STORAGES=(/ocean /bil /hive /local)
+OPTIONS=""
+for STORAGE in "${STORAGES[@]}"
+do
+        if [ -d "$STORAGE" ]; then
+                OPTIONS=$OPTIONS" -B $STORAGE"
+        fi
+done
+
+if id | grep -q hubmap && [ -d "/hive" ]; then
+        OPTIONS=$OPTIONS" -B /hive"
 fi
 
-if [ -d /local ]; then
-	OPTIONS=$OPTIONS" -B /local"
+if id | grep -q bil && [ -d "/bil" ]; then
+        OPTIONS=$OPTIONS" -B /bil"
 fi
 
 singularity exec $OPTIONS $DIRECTORY/singularity-$PACKAGE-$VERSION.sif $TOOL "$@"

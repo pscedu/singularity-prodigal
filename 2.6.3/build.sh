@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Copyright © 2021 Pittsburgh Supercomputing Center.
+# Copyright © 2021-2025 Pittsburgh Supercomputing Center.
 # All Rights Reserved.
 
 IMAGE=singularity-prodigal-2.6.3.sif
